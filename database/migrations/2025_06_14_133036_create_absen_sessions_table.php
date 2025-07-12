@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('absensessions', function (Blueprint $table) {
-            $table->id();
-            $table->string('judul')->nullable(); // contoh: "Absen Hari Senin"
-            $table->date('tanggal');
-            $table->boolean('is_open')->default(false); // status absen dibuka atau tidak
-            $table->timestamps();
-            $table->timestamp('dibuka_pada')->nullable()->after('is_open');
-            $table->timestamp('ditutup_pada')->nullable()->after('dibuka_pada');
-        });
+      Schema::create('absen_sessions', function (Blueprint $table) {
+    $table->id();
+    $table->string('judul')->nullable(); // contoh: "Absen Hari Senin"
+    $table->date('tanggal');
+    $table->boolean('is_open')->default(false); // status absen dibuka atau tidak
+    $table->timestamps();
+    $table->timestamp('dibuka_pada')->nullable();
+    $table->timestamp('ditutup_pada')->nullable();
+});
+
     }
 
     /**
