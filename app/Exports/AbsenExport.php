@@ -35,7 +35,7 @@ class AbsenExport implements FromArray, WithEvents
         foreach ($this->tanggalList as $tanggal) {
             $header1[] = Carbon::parse($tanggal)->format('d');
         }
-        $header1 = array_merge($header1, ['Jumlah Hari Kerja', 'H', 'I', 'S', 'A']);
+        $header1 = array_merge($header1, ['Jumlah Hari', 'H', 'I', 'S', 'A']);
         $data[] = $header1;
 
         // Baris data user
