@@ -18,12 +18,14 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
 
         // Baru buat user yang membutuhkan id_role = 1
-        User::firstOrCreate([
-            'username' => 'hafiz',
-            // 'email' => 'hafiz@example.com',
-            'password' => Hash::make('password'), // atau bcrypt('password')
-            'id_role' => 1,
-            // 'remember_token' => Str::random(10),
-        ]);
+        User::firstOrCreate(
+            ['username' => 'hafiz'], // dicari berdasarkan username saja
+            [
+                'password' => Hash::make('password'),
+                'id_role' => 1,
+                // 'email' => 'hafiz@example.com',
+                // 'remember_token' => Str::random(10),
+            ]
+        );
     }
 }
