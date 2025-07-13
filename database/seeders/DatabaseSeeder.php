@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             // 'email' => 'hafiz@example.com',
             'password' => Hash::make('password'), // atau bcrypt('password')
             'id_role' => 1,
-            'remember_token' => Str::random(10),
+            // 'remember_token' => Str::random(10),
         ]);
     }
 }

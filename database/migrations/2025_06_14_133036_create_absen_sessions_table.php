@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-      Schema::create('absen_sessions', function (Blueprint $table) {
+    Schema::create('absensessions', function (Blueprint $table) {
     $table->id();
     $table->string('judul')->nullable(); // contoh: "Absen Hari Senin"
     $table->date('tanggal');

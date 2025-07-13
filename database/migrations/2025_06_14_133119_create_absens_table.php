@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('absens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_user')->constrained('users')->onDelete('cascade');
-            $table->foreignId('absen_session_id')->constrained()->onDelete('cascade');
+            $table->foreignId('absensession_id')->constrained()->onDelete('cascade');
             $table->enum('status', ['hadir', 'izin', 'sakit', 'alpa']);
             $table->text('keterangan')->nullable();
             $table->timestamps();
