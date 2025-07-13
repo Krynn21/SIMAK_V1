@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\User;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,12 +12,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Jalankan seeder Role terlebih dahulu
+        $this->call(RoleSeeder::class);
 
+        // Baru buat user yang membutuhkan id_role = 1
         User::factory()->create([
             'username' => 'hafiz',
             'id_role' => 1,
-            
         ]);
     }
 }
