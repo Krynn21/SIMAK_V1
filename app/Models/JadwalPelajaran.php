@@ -25,7 +25,7 @@ class JadwalPelajaran extends Model
 
     public function mapel()
     {
-        return $this->belongsTo(mapel::class, 'mapel_id');
+        return $this->belongsTo(Mapel::class, 'mapel_id');
     }
     public function user()
     {

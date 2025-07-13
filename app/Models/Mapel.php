@@ -16,5 +16,5 @@ class Mapel extends Model
     protected $fillable = [
         'nama_mapel',
         // tambahkan field lain sesuai kebutuhan
-    ];
+    ];  
 }
