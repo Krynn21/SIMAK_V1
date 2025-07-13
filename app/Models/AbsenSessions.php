@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class AbsenSessions extends Model
 {
 
-    protected $table = 'absensessions'; 
+    protected $table = 'absen_sessions'; 
     protected $fillable = ['tanggal', 'is_open','judul',];
 
     public function scopeOpen($query)
