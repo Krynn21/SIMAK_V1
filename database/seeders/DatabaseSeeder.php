@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RoleSeeder::class);
 
         // Baru buat user yang membutuhkan id_role = 1
-        User::firstOrCreate(
+        User::updateOrCreate(
             ['username' => 'hafiz'], // dicari berdasarkan username saja
             [
                 'password' => Hash::make('password'),

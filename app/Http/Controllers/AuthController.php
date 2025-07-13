@@ -72,7 +72,7 @@ class AuthController extends Controller
         } else {
             return back()->with('error', 'Username tidak ditemukan!');
         }
-        $bsenSessions = absen_sessions::where('is_open', true)->get();
+        $absenSessions = AbsenSessions::where('is_open', true)->get();
 
         // Kirim ke view
         return view('/dashboard', compact('absenSessions'));  
@@ -83,8 +83,8 @@ class AuthController extends Controller
         return redirect('/login');
     }
     public function bukaAbsen(Request $request) {
-        $absenSessions = absen_sessions::open()->get();
-        absen_sessions::create([
+        $absenSessions = AbsenSessions::open()->get();
+        AbsenSessions::create([
             'judul' => $request->judul,
             'tanggal' => $request->tanggal,
             'is_open' => true,
