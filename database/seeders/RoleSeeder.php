@@ -16,7 +16,7 @@ class RoleSeeder extends Seeder
 
         Role::updateOrCreate(
             ['id' => 2],
-            ['name' => 'user']
+            ['name' => 'pengguna']
         );
     }
 }
