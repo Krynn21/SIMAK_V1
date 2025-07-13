@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,12 +14,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // Jalankan seeder Role terlebih dahulu
-        $this->call(RoleSeeder::class);
+        // Buat role langsung di sini
+        Role::updateOrCreate(
+            ['id' => 1],
+            ['name' => 'admin']
+        );
 
-        // Baru buat user yang membutuhkan id_role = 1
+        Role::updateOrCreate(
+            ['id' => 2],
+            ['name' => 'pengguna']
+        );
+
+        // Buat user admin
         User::updateOrCreate(
-            ['username' => 'hafiz'], // dicari berdasarkan username saja
+            ['username' => 'hafiz'],
             [
                 'password' => Hash::make('password'),
                 'id_role' => 1,
