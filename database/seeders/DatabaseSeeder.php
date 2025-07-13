@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'username' => 'hafiz',
             'id_role' => 1,
+            
         ]);
     }
 }
